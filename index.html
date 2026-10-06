@@ -113,14 +113,22 @@ form{max-width:520px;margin:28px auto 0;display:grid;gap:12px;text-align:left}
 input,select,textarea{width:100%;padding:12px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit}
 
 footer{border-top:1px solid var(--line);padding:50px 0 24px}
-.ftop{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:34px}
+.ftop{display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:34px}
 .social{display:flex;gap:10px}
-.social .ph{width:38px;aspect-ratio:1;border-radius:50%}
 .fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
 .fgrid h5{text-transform:uppercase;letter-spacing:.1em;font-size:.8rem;margin-bottom:12px}
 .fgrid a,.fgrid p{display:block;color:var(--muted);font-size:.9rem;padding:3px 0}
 .fgrid a:hover{color:var(--accent)}
 .copy{margin-top:34px;color:var(--muted);font-size:.8rem;text-align:center}
+.social .soc{
+  display:inline-flex;width:44px;height:44px;border-radius:50%;overflow:hidden;transition:.25s;}
+.social .soc img{width:100%;height:100%;object-fit:cover;}
+.social .soc:hover{transform:translateY(-3px)}
+
+footer .ftop{
+  display:flex !important;justify-content:flex-start !important;gap:16px !important;}
+footer .ftop .btns{flex:0 0 auto !important;width:auto !important;margin:0 !important;}
+footer .ftop .social{margin-left:0 !important;flex:0 0 auto !important;}
 
 @media(max-width:900px){
 .tiles,.grid4,.fgrid,.dgrid{grid-template-columns:repeat(2,1fr)}
@@ -132,6 +140,13 @@ footer{border-top:1px solid var(--line);padding:50px 0 24px}
 .menu>li>a{padding:12px 0}
 .drop{position:static;display:block;border:0;padding:0 0 0 12px;background:none}
 .nav>.btn{display:none}
+.hero .bg{
+  inset:0 0 auto 0;      /* top, right, bottom=auto, left */
+  height:640px;          /* only cover the top part on phones */
+  -webkit-mask-image:linear-gradient(to bottom,#000 65%,transparent);
+          mask-image:linear-gradient(to bottom,#000 65%,transparent);
+}
+.hero .bg img{object-position:center}
 }
 @media(max-width:560px){.dgrid,.tiles{grid-template-columns:1fr}}
 </style>
@@ -172,14 +187,7 @@ footer{border-top:1px solid var(--line);padding:50px 0 24px}
 </div>
 </section>
 
-<!-- 2. UPTIME STRIP WITH 6 LOGO SLOTS -->
-<div class="strip"><div class="wrap">
-<p>Trusted tracking at an unbeatable value.</p>
-<div class="logos">
-<div class="ph" data-img="images/partner-1.png" data-size="155x58"></div><div class="ph" data-img="images/partner-2.png" data-size="155x58"></div><div class="ph" data-img="images/partner-3.png" data-size="155x58"></div>
-<div class="ph" data-img="images/partner-4.png" data-size="155x58"></div><div class="ph" data-img="images/partner-5.png" data-size="155x58"></div><div class="ph" data-img="images/partner-6.png" data-size="155x58"></div>
-</div>
-</div></div>
+
 
 <!-- 3. ECOSYSTEM: 3 CARDS WITH IMAGES -->
 <section id="ecosystem"><div class="wrap">
@@ -272,8 +280,9 @@ footer{border-top:1px solid var(--line);padding:50px 0 24px}
 <!-- 9. FOOTER -->
 <footer id="footer"><div class="wrap">
 <div class="ftop">
-<div class="btns" style="margin:0"><a href="#" class="btn">Join the academy</a><a href="#" class="btn primary">Subscribe to newsletter</a></div>
-<div class="social"><div class="ph" data-img="images/social-1.png" data-size="in"></div><div class="ph" data-img="images/social-2.png" data-size="yt"></div><div class="ph" data-img="images/social-3.png" data-size="fb"></div><div class="ph" data-img="images/social-4.png" data-size="x"></div></div>
+<div class="btns" style="margin:0"><a href="#" class="btn primary">Subscribe to newsletter</a></div>
+<div class="social"><a class="soc" href=https://www.facebook.com/profile.php?id=100092573852779 target="_blank" rel="noopener" aria-label="Feams Groups on Facebook"><img src="social-3.png" alt="Facebook"></a>
+</div>
 </div>
 <div class="fgrid">
 <div><h5>Use cases</h5><a href="#usecases">Logistics &amp; fleets</a><a href="#usecases">Ride &amp; delivery</a><a href="#usecases">Personal vehicles</a><a href="#usecases">Public transport</a></div>
