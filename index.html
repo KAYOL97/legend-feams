@@ -25,7 +25,7 @@ h2{font-size:clamp(1.5rem,3vw,2.2rem);text-transform:uppercase;margin-bottom:14p
 /* REPLACEABLE IMAGE HOLDERS: drop a file at the path in data-img and it replaces the placeholder */
 .ph{position:relative;display:grid;place-items:center;text-align:center;overflow:hidden;border-radius:10px;border:2px dashed #3a4f85;background:repeating-linear-gradient(45deg,#14213a,#14213a 12px,#18284a 12px,#18284a 24px);color:var(--muted);font-size:.72rem;line-height:1.4;width:100%}
 .ph span{padding:6px;word-break:break-all}
-.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:var(--bg)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--bg)}
 .ph.logo{width:150px;aspect-ratio:150/40}
 
 header{position:sticky;top:0;z-index:50;background:rgba(10,18,32,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
@@ -44,6 +44,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(10,18,32,.93);backdrop-f
 
 .hero{position:relative;padding:90px 0 70px;overflow:hidden}
 .hero .bg{position:absolute;inset:0;border-radius:0;border:0;opacity:.45}
+.hero .bg img{object-fit:cover;background:none;}
 .hero .wrap{position:relative}
 .hero p{color:var(--muted);margin:18px 0 0;max-width:540px;font-size:1.1rem}
 .hero h1 em{font-style:normal;color:var(--accent)}
@@ -51,6 +52,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(10,18,32,.93);backdrop-f
 .tile{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;transition:.25s}
 .tile:hover{transform:translateY(-6px);border-color:var(--accent)}
 .tile .ph{aspect-ratio:980/591;margin-bottom:14px}
+.tile .ph img{object-fit:cover;background:none;}
 .tile h3{font-size:1.05rem;margin-bottom:4px}
 
 .strip{background:var(--bg2);padding:36px 0;border-block:1px solid var(--line);text-align:center}
@@ -138,7 +140,7 @@ footer{border-top:1px solid var(--line);padding:50px 0 24px}
 
 <header>
 <div class="wrap nav">
-<a href="#" style="display:flex;align-items:center;gap:10px"><div class="ph logo" data-img="logo.png" data-size="300x80 logo"></div><span class="logo-text">FEAMS<span>.</span>GROUP</span></a>
+<a href="#" style="display:flex;align-items:center;gap:10px"><div class="ph logo" data-img="logo.png" data-size="300x80 logo"></div></a>
 <button class="burger" id="burger" aria-label="Toggle menu">☰</button>
 <ul class="menu" id="menu">
 <li><a href="#products">Products</a>
@@ -157,7 +159,7 @@ footer{border-top:1px solid var(--line);padding:50px 0 24px}
 
 <!-- 1. HERO + 4 PRODUCT TILES -->
 <section class="hero">
-<div class="ph bg" data-img="background.jpeg" data-size="1600x700 hero background"></div>
+<div class="ph bg" data-img="background.jpeg" data-size="1900x1000 hero background"></div>
 <div class="wrap">
 <h1>Moving Business.<br><em>Managing Assets.</em><br><em>Connecting Opportunities.</em></h1>
 <p>Integrated Fleet, Logistics, Petroleum & Technology Solutions.</p>
@@ -186,9 +188,9 @@ footer{border-top:1px solid var(--line);padding:50px 0 24px}
 <p class="lead">Combine Feams hardware with the Feams Track platform to monitor every vehicle you manage.</p>
 <div class="btns"><a href="#contact" class="btn primary">Speak with our experts</a></div>
 <div class="cols3">
-<article class="card"><div class="ph" data-img="images/eco-hardware.png" data-size="980x481"></div><h3>GPS hardware</h3><p>The foundation. Durable trackers for cars, bikes and heavy vehicles.</p><a class="more" href="#devices">View devices →</a></article>
-<article class="card"><div class="ph" data-img="images/eco-software.png" data-size="980x481"></div><h3>Feams Track</h3><p>The command centre. Live map, route history, geofences and reports.</p><a class="more" href="#contact">Explore platform →</a></article>
-<article class="card"><div class="ph" data-img="images/eco-app.png" data-size="980x481"></div><h3>Feams Track app</h3><p>Your vehicles in your pocket, with alerts wherever you are.</p><a class="more" href="#contact">Learn more →</a></article>
+<article class="card"><div class="ph" data-img="gps-hardware.png" data-size="980x481"></div><h3>GPS hardware</h3><p>The foundation. Durable trackers for cars, bikes and heavy vehicles.</p><a class="more" href="#devices">View devices →</a></article>
+<article class="card"><div class="ph" data-img="feams-track.png" data-size="980x481"></div><h3>Feams Track</h3><p>The command centre. Live map, route history, geofences and reports.</p><a class="more" href="#contact">Explore platform →</a></article>
+<article class="card"><div class="ph" data-img="feams-track-app.png" data-size="980x481"></div><h3>Feams Track app</h3><p>Your vehicles in your pocket, with alerts wherever you are.</p><a class="more" href="#contact">Learn more →</a></article>
 </div>
 </div></section>
 
@@ -227,10 +229,10 @@ footer{border-top:1px solid var(--line);padding:50px 0 24px}
 <div class="tabs" id="tabs">
 <button class="tab active">Logistics &amp; fleets</button><button class="tab">Ride &amp; delivery</button><button class="tab">Personal vehicles</button><button class="tab">Public transport</button>
 </div>
-<div class="panel active"><div class="ph" data-img="images/usecase-1.png" data-size="980x778"></div><div><h3>Logistics &amp; fleets</h3><p class="lead">Always-on visibility for trucks and vans.</p><ul class="feat"><li><b>Live fleet map</b><span>Every vehicle's position and status.</span></li><li><b>Route history</b><span>Review trips and stops.</span></li><li><b>Geofencing</b><span>Alerts when vehicles enter or leave zones.</span></li><li><b>Maintenance reminders</b><span>Service by mileage or hours.</span></li></ul></div></div>
-<div class="panel"><div class="ph" data-img="images/usecase-2.png" data-size="980x778"></div><div><h3>Ride &amp; delivery</h3><p class="lead">Manage motorbike and car riders at scale.</p><ul class="feat"><li><b>Rider tracking</b><span>Know where each delivery is.</span></li><li><b>Speed alerts</b><span>Encourage safer riding.</span></li><li><b>Trip reports</b><span>Distance and time per rider.</span></li><li><b>Multi-bike dashboards</b><span>Hundreds of riders, one screen.</span></li></ul></div></div>
-<div class="panel"><div class="ph" data-img="images/usecase-3.png" data-size="980x778"></div><div><h3>Personal vehicles</h3><p class="lead">Peace of mind for your car or bike.</p><ul class="feat"><li><b>Anti-theft alerts</b><span>Notified the moment it moves.</span></li><li><b>Trip history</b><span>See where and when you drove.</span></li><li><b>Share location</b><span>Let family follow a journey.</span></li><li><b>Mobile app</b><span>Check anytime from your phone.</span></li></ul></div></div>
-<div class="panel"><div class="ph" data-img="images/usecase-4.png" data-size="980x778"></div><div><h3>Public transport</h3><p class="lead">Keep buses and taxis on schedule.</p><ul class="feat"><li><b>Schedule monitoring</b><span>Track delays and stops.</span></li><li><b>Driver reports</b><span>Summaries of driving behaviour.</span></li><li><b>Panic button</b><span>Instant alerts to the control room.</span></li><li><b>Passenger safety</b><span>Know where every vehicle is.</span></li></ul></div></div>
+<div class="panel active"><div class="ph" data-img="logistics-fleets.jpg" data-size="980x778"></div><div><h3>Logistics &amp; fleets</h3><p class="lead">Always-on visibility for trucks and vans.</p><ul class="feat"><li><b>Live fleet map</b><span>Every vehicle's position and status.</span></li><li><b>Route history</b><span>Review trips and stops.</span></li><li><b>Geofencing</b><span>Alerts when vehicles enter or leave zones.</span></li><li><b>Maintenance reminders</b><span>Service by mileage or hours.</span></li></ul></div></div>
+<div class="panel"><div class="ph" data-img="ride-delivery.jpg" data-size="980x778"></div><div><h3>Ride &amp; delivery</h3><p class="lead">Manage motorbike and car riders at scale.</p><ul class="feat"><li><b>Rider tracking</b><span>Know where each delivery is.</span></li><li><b>Speed alerts</b><span>Encourage safer riding.</span></li><li><b>Trip reports</b><span>Distance and time per rider.</span></li><li><b>Multi-bike dashboards</b><span>Hundreds of riders, one screen.</span></li></ul></div></div>
+<div class="panel"><div class="ph" data-img="personal-vehicles.jpg" data-size="980x778"></div><div><h3>Personal vehicles</h3><p class="lead">Peace of mind for your car or bike.</p><ul class="feat"><li><b>Anti-theft alerts</b><span>Notified the moment it moves.</span></li><li><b>Trip history</b><span>See where and when you drove.</span></li><li><b>Share location</b><span>Let family follow a journey.</span></li><li><b>Mobile app</b><span>Check anytime from your phone.</span></li></ul></div></div>
+<div class="panel"><div class="ph" data-img="public-transport.png" data-size="980x778"></div><div><h3>Public transport</h3><p class="lead">Keep buses and taxis on schedule.</p><ul class="feat"><li><b>Schedule monitoring</b><span>Track delays and stops.</span></li><li><b>Driver reports</b><span>Summaries of driving behaviour.</span></li><li><b>Panic button</b><span>Instant alerts to the control room.</span></li><li><b>Passenger safety</b><span>Know where every vehicle is.</span></li></ul></div></div>
 </div></section>
 
 <!-- 6. SUPPORT: IMAGE + 3 CARDS -->
