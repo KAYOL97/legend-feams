@@ -130,6 +130,14 @@ footer .ftop{
 footer .ftop .btns{flex:0 0 auto !important;width:auto !important;margin:0 !important;}
 footer .ftop .social{margin-left:0 !important;flex:0 0 auto !important;}
 
+/* ABOUT US */
+#About,#vision,#mission,#partners{scroll-margin-top:80px}
+.about-block{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;margin-top:50px}
+.about-block.rev .ph{order:2}
+.about-block .ph{aspect-ratio:980/600}
+.about-block h3{font-size:1.5rem;margin-bottom:10px;color:var(--accent)}
+.about-block p{color:var(--muted);margin-bottom:12px}
+
 @media(max-width:900px){
 .tiles,.grid4,.fgrid,.dgrid{grid-template-columns:repeat(2,1fr)}
 .logos{grid-template-columns:repeat(3,1fr)}
@@ -145,6 +153,9 @@ footer .ftop .social{margin-left:0 !important;flex:0 0 auto !important;}
   height:640px;          /* only cover the top part on phones */
   -webkit-mask-image:linear-gradient(to bottom,#000 65%,transparent);
           mask-image:linear-gradient(to bottom,#000 65%,transparent);
+.cols3,.support,.banner,.panel.active,.about-block{grid-template-columns:1fr}
+.about-block.rev .ph{order:0}
+
 }
 .hero .bg img{object-position:center}
 }
@@ -275,6 +286,47 @@ footer .ftop .social{margin-left:0 !important;flex:0 0 auto !important;}
 <button class="btn primary" type="submit">Send request</button>
 <p id="ok" class="lead" style="display:none;color:var(--accent)">Thank you! We'll be in touch shortly.</p>
 </form>
+</div></section>
+
+<!-- ABOUT US -->
+<section id="About" class="alt"><div class="wrap">
+<h2>About Feams Group of Companies</h2>
+<p class="lead">Write a short introduction about your company here.</p>
+
+<!-- OUR VISION -->
+<div class="about-block" id="vision">
+  <div class="ph" data-img="images/vision.jpg" data-size="980x600 vision image"></div>
+  <div>
+    <h3>Our Vision</h3>
+    <p>Write your vision statement here.</p>
+    <p>You can add a second paragraph here if you need one.</p>
+  </div>
+</div>
+
+<!-- OUR MISSION -->
+<div class="about-block rev" id="mission">
+  <div class="ph" data-img="images/mission.jpg" data-size="980x600 mission image"></div>
+  <div>
+    <h3>Our Mission</h3>
+    <p>Write your mission statement here.</p>
+    <p>You can add a second paragraph here if you need one.</p>
+  </div>
+</div>
+
+<!-- OUR PARTNERS -->
+<div id="partners" style="margin-top:50px">
+  <h3 style="color:var(--accent);font-size:1.5rem;margin-bottom:10px">Our Partners</h3>
+  <p class="lead">Write a short line about your partners here.</p>
+  <div class="logos" style="margin-top:24px">
+    <div class="ph" data-img="images/partner-1.png" data-size="155x58 partner 1"></div>
+    <div class="ph" data-img="images/partner-2.png" data-size="155x58 partner 2"></div>
+    <div class="ph" data-img="images/partner-3.png" data-size="155x58 partner 3"></div>
+    <div class="ph" data-img="images/partner-4.png" data-size="155x58 partner 4"></div>
+    <div class="ph" data-img="images/partner-5.png" data-size="155x58 partner 5"></div>
+    <div class="ph" data-img="images/partner-6.png" data-size="155x58 partner 6"></div>
+  </div>
+</div>
+
 </div></section>
 
 <!-- 9. FOOTER -->
